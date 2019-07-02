@@ -291,7 +291,9 @@ layui
           if (existsTab) {
             var menu = $(this.menu)
             var currentMenu = menu.find(lay)
-
+            // 切换tab的时候 更新网站title
+            self.setTitle(currentMenu[0].innerText + " - " +conf.name);
+            
             if (existsTab.href !== route.href) {
               tab.del(existsTab.fileurl, true)
               tab.change(route)
